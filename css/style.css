@@ -1,0 +1,37 @@
+* {
+  margin: 0;
+}
+html, body {
+  height: 100%;
+}
+.page-wrap {
+  min-height: 100%;
+  /* equal to footer height */
+  margin-bottom: -75px; 
+}
+.page-wrap:after {
+  content: "";
+  display: block;
+}
+.footer, .page-wrap:after {
+  height: 75px; 
+}
+
+
+
+.navbar-default .navbar-brand {
+    color: #33899A;
+}
+.footer{
+    background-color: #33899A;
+    font-size: 16px;
+    text-align: center;
+    color: #fff;
+  
+  
+}
+
+.copyright{
+    padding: 25px;
+}
+

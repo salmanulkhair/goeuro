@@ -1,0 +1,25 @@
+<div class='page-header'>
+    <h1> Github Repositories </h1>
+</div>
+
+<p>
+    <span ng-show="statusMessage!=''">{{ statusMessage }}</span>
+    <input type='search' class='form-control' placeholder='Search' ng-model='query' />
+    <button type="button" class="btn btn-primary form-control" ng-click="findUserRepo()">Search User</button>
+</p>
+<table class='table table-hover table-bordered'>
+    <thead>
+        <tr>
+            <th ng-repeat='field in fields' ng-click='sort(field.data)'>
+                {{ field.title }}
+                <span ng-show='sort.field === field.data  && !sort.order' class='fa fa-chevron-down'></span>
+                <span ng-show='sort.field === field.data  && sort.order' class='fa fa-chevron-up'></span>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-click='' ng-repeat='repo in repos | filter: query | orderBy: sort.field : sort.order'>
+            <td ng-repeat='field in fields'> <span ng-show="field.data=='full_name'" class="fa fa-folder"></span> {{ repo[field.data] }} </td>
+        </tr>
+    </tbody>
+</table>
